@@ -16,6 +16,6 @@ export const Container = styled.div`
   }
 
   section{
-    padding: 30px;
+    padding: 20px 30px 20px 30px;
   }
 `;

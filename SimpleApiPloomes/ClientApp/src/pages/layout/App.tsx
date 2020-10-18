@@ -7,17 +7,17 @@ import NavBar from '../components/NavBar';
 import { Container } from './styles';
 
 const App: React.FC = () => {
-  const [books, setBooks] = useState<IBooks>();
+  const [books, setBooks] = useState<IBooks[]>([]);
 
   useEffect(() => {
-    api.get<IBooks>('/api/books').then(
+    api.get<IBooks[]>('/api/books').then(
       response => setBooks(response.data)
     );
   }, [])
   return (
     <Container>
       <NavBar />
-      <Dashboard />
+      <Dashboard books={books} />
     </Container>
   );
 };

@@ -1,9 +1,16 @@
 import React from 'react'
+import { IBooks } from '../../layout/models/books';
+import ListData from '../ListData';
 import { Container } from './styles';
 
-const Dashboard: React.FC = () => {
+interface IProps {
+  books: IBooks[];
+}
+
+const Dashboard: React.FC<IProps> = ({ books }) => {
   return (
     <Container>
+      <ListData books={books} />
     </Container>
   );
 };
