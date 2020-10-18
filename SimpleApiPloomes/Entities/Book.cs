@@ -19,10 +19,8 @@ namespace SimpleApiPloomes.Entities
     [StringLength(100)]
     public string Publisher { get; set; }
 
-    [Column(TypeName = "decimal(9,2)")]
-    public decimal Price { get; set; }
-
-    public string ImageUrl { get; set; }
+    [StringLength(100)]
+    public string Author { get; set; }
 
     [StringLength(100)]
     public string Category { get; set; }
@@ -31,31 +29,4 @@ namespace SimpleApiPloomes.Entities
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; }
   }
-
-  // public enum Categories
-  // {
-  //   Administração,
-  //   Artes,
-  //   AutoAjuda,
-  //   Informática,
-  //   AudioLivro,
-  //   ComicBook,
-  //   Manga,
-  //   Medicina,
-  //   CiênciasBiológicas,
-  //   CiênciasExatas,
-  //   CiênciasHumanas,
-  //   Economia,
-  //   Gastronomia,
-  //   Didático,
-  //   Dicionário,
-  //   EsportesELazer,
-  //   LiteraturaInfantoJuvenil,
-  //   LiteraturaBrasileira,
-  //   LiteraturaEstrangeira,
-  //   Idioma,
-  //   Direito,
-  //   Religião,
-  //   Diversos
-  // }
 }

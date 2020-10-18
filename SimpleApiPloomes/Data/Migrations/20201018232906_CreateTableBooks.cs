@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SimpleApiPloomes.Data.Migrations
 {
-    public partial class CreateBooksTable : Migration
+    public partial class CreateTableBooks : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,8 +15,7 @@ namespace SimpleApiPloomes.Data.Migrations
                     Title = table.Column<string>(maxLength: 200, nullable: true),
                     Description = table.Column<string>(maxLength: 500, nullable: true),
                     Publisher = table.Column<string>(maxLength: 100, nullable: true),
-                    Price = table.Column<decimal>(type: "decimal(9,2)", nullable: false),
-                    ImageUrl = table.Column<string>(nullable: true),
+                    Author = table.Column<string>(maxLength: 100, nullable: true),
                     Category = table.Column<string>(maxLength: 100, nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: false)

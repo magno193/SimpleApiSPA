@@ -25,6 +25,10 @@ namespace SimpleApiPloomes.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
@@ -36,12 +40,6 @@ namespace SimpleApiPloomes.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(500)")
                         .HasMaxLength(500);
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(9,2)");
 
                     b.Property<string>("Publisher")
                         .HasColumnType("nvarchar(100)")

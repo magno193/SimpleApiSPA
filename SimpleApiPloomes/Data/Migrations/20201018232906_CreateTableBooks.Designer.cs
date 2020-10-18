@@ -10,8 +10,8 @@ using SimpleApiPloomes.Data;
 namespace SimpleApiPloomes.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201017220846_CreateBooksTable")]
-    partial class CreateBooksTable
+    [Migration("20201018232906_CreateTableBooks")]
+    partial class CreateTableBooks
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,10 @@ namespace SimpleApiPloomes.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
@@ -38,12 +42,6 @@ namespace SimpleApiPloomes.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(500)")
                         .HasMaxLength(500);
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(9,2)");
 
                     b.Property<string>("Publisher")
                         .HasColumnType("nvarchar(100)")

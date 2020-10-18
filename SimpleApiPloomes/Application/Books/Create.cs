@@ -19,9 +19,7 @@ namespace SimpleApiPloomes.Application.Books
 
       public string Publisher { get; set; }
 
-      public decimal Price { get; set; }
-
-      public string ImageUrl { get; set; }
+      public string Author { get; set; }
 
       public string Category { get; set; }
     }
@@ -42,8 +40,7 @@ namespace SimpleApiPloomes.Application.Books
           Title = request.Title,
           Description = request.Description,
           Publisher = request.Publisher,
-          Price = request.Price,
-          ImageUrl = request.ImageUrl,
+          Author = request.Author,
           Category = request.Category,
           UpdatedAt = DateTime.Now
         };
