@@ -10,9 +10,12 @@ import { FiBookOpen } from 'react-icons/fi';
 
 interface IProps {
   books: IBooks[];
+  passBookData: (id: string) => void;
+  setBook: (book: IBooks | null) => void;
 }
 
-const ListData: React.FC<IProps> = ({ books }) => {
+const ListData: React.FC<IProps> = ({ books, passBookData }) => {
+
   return (
     <Container>
       {books.map(book => (
@@ -25,7 +28,7 @@ const ListData: React.FC<IProps> = ({ books }) => {
             <span>{book.category}</span>
             <p><span>R$ </span>{book.price}</p>
           </Content>
-          <button>Ver</button>
+          <button onClick={() => passBookData(book.id)}>Ver</button>
         </Item>
       ))}
     </Container>

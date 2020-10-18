@@ -5,8 +5,9 @@ export const Container = styled.main`
 
 export const Item = styled.div`
   display: grid;
-  padding: 10px;
+  padding: 5px;
   grid-template-columns: 60px 2fr 1fr;
+  grid-gap: 5px;
   box-shadow: 1px 1px 2px 0px rgba(50,50,50,0.41);
   background-color: #EEE;
 
@@ -37,8 +38,6 @@ export const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f1f1fC;
-  border-radius: 4px;
 
   svg {
     margin: auto;
@@ -49,8 +48,6 @@ export const Content = styled.div`
   margin-left: 10px;
   display: flex;
   flex-direction: column;
-  background-color: #f1f1fC;
-  border-radius: 4px;
 
   strong {
     font-family: 'Roboto Slab',serif;
@@ -64,9 +61,10 @@ export const Content = styled.div`
   }
 
   p {
-    margin-top: 20px;
+    margin-top: 10px;
     color: #68ad6b;
     font-weight: 500;
+    align-self: flex-end;
 
     span {
       color: #333;
