@@ -29,6 +29,9 @@ Este *app* também possui uma aplicação *client*, baseado em *SPA* (*Single Pa
 ### Instalando pacotes pelo npm
 ```
 cd .\SimpleApiPloomes\ClientApp\
+```
+
+```
 npm install
 ```
 
