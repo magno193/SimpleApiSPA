@@ -10,9 +10,12 @@ const App: React.FC = () => {
   const [openForm, setOpenForm] = useState(false);
 
   useEffect(() => {
-    api.get<IBooks[]>('/api/books').then(
-      response => setBooks(response.data)
-    );
+    const loadBooks = async () => {
+      const { data } = await api.get<IBooks[]>('/api/books');
+      console.log(data);
+      setBooks(data);
+    }
+    loadBooks();
   }, [])
   return (
     <Container>
