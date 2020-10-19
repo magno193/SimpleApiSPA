@@ -9,13 +9,22 @@ const App: React.FC = () => {
   const [books, setBooks] = useState<IBooks[]>([]);
   const [openForm, setOpenForm] = useState(false);
 
+  async function fetchData() {
+    const response = await fetch('/api/books');
+    const data = await response.json()
+      .then(data => data)
+    setBooks(data);
+  }
+
   useEffect(() => {
-    const loadBooks = async () => {
-      const { data } = await api.get<IBooks[]>('/api/books');
-      console.log(data);
-      setBooks(data);
-    }
-    loadBooks();
+    // const loadBooks = async () => {
+    //   const { data } = await api.get<IBooks[]>('/api/books');
+    //   console.log(data);
+    //   setBooks(data);
+
+    // }
+    // loadBooks();
+    fetchData();
   }, [])
   return (
     <Container>
