@@ -20,9 +20,6 @@ export const Title = styled.header`
   font-family: 'Roboto Slab',serif;
   font-weight: 700;
   font-size: 20px;
-  span {
-    color: #68ad6b;
-  }
 `;
 
 export const Image = styled.img`
@@ -34,7 +31,7 @@ export const Tags = styled.div`
   align-items: center;
 
   span {
-    background-color: #222;
+    background-color: #666;
     border-radius: 8px;
     padding: 3px 6px;
     color: #fff;

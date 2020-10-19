@@ -23,10 +23,10 @@ const DetailsData: React.FC<IProps> = ({ book }) => {
           <Image src={`${book.imageUrl}`} /> :
           <FiBookOpen size={80} />
         } */}
-        <FiBookOpen size={160} style={{ alignSelf: "center" }} />
+        <FiBookOpen size={140} style={{ alignSelf: "center" }} />
         <Title>
           <strong>{book.title}</strong>
-          <span>R$ {book.price}</span>
+          <span>{book.author}</span>
         </Title>
         <Tags>
           <span>{book.category}</span>
@@ -35,10 +35,10 @@ const DetailsData: React.FC<IProps> = ({ book }) => {
         <Content>
           {book.description}
         </Content>
-        <ButtonGroup>
-          <button>Editar</button>
+        {/* <ButtonGroup>
+          <button onClick={() => { }}>Editar</button>
           <button>Cancelar</button>
-        </ButtonGroup>
+        </ButtonGroup> */}
       </Item>
     </Container>
   );

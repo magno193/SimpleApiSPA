@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
+  div + div {
+    margin-top: 10px;
+  }
 `;
 
 export const Item = styled.div`
@@ -48,27 +51,30 @@ export const Content = styled.div`
   margin-left: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   strong {
     font-family: 'Roboto Slab',serif;
     font-weight: 700;
   }
 
-  > span {
+  > div {
     font-size: 12px;
     color: #fff;
-    background-color: #666
-  }
+    align-self: flex-start;
+    justify-self: start;
 
-  p {
-    margin-top: 10px;
-    color: #68ad6b;
-    font-weight: 500;
-    align-self: flex-end;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
 
     span {
-      color: #333;
+      background-color: #666;
+      padding: 4px 8px 4px 8px;
+      border-radius: 8px;
+      text-align: center;
     }
   }
+
 `;
 

@@ -6,7 +6,7 @@ import {
   ImageContainer,
   Content
 } from './styles';
-import { FiBookOpen } from 'react-icons/fi';
+import { FiBook } from 'react-icons/fi';
 
 interface IProps {
   books: IBooks[];
@@ -21,12 +21,14 @@ const ListData: React.FC<IProps> = ({ books, passBookData }) => {
       {books.map(book => (
         <Item key={book.id}>
           <ImageContainer>
-            <FiBookOpen size={40} />
+            <FiBook size={40} />
           </ImageContainer>
           <Content>
             <strong>{book.title}</strong>
-            <span>{book.category}</span>
-            <p><span>R$ </span>{book.price}</p>
+            <div>
+              <span>{book.category}</span>
+              <span>{book.author}</span>
+            </div>
           </Content>
           <button onClick={() => passBookData(book.id)}>Ver</button>
         </Item>

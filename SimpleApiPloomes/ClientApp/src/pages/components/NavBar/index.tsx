@@ -2,7 +2,11 @@ import React from 'react'
 import { FiBook } from 'react-icons/fi';
 import { Container } from './styles';
 
-const NavBar: React.FC = () => {
+interface IProps {
+  setOpenForm: (value: boolean) => void;
+}
+
+const NavBar: React.FC<IProps> = ({ setOpenForm }) => {
   return (
     <Container>
       <div>
@@ -10,7 +14,7 @@ const NavBar: React.FC = () => {
         <span>Biblioteca</span>
       </div>
       <div>
-        <button>Adicionar</button>
+        <button onClick={() => setOpenForm(true)}>Adicionar</button>
       </div>
     </Container>
   );
