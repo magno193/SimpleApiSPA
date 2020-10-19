@@ -7,7 +7,7 @@ using SimpleApiPloomes.Entities;
 
 namespace SimpleApiPloomes.Application.Books
 {
-  public class Create
+  public class Edit
   {
     public class Command : IRequest
     {
@@ -34,20 +34,18 @@ namespace SimpleApiPloomes.Application.Books
 
       public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
       {
-        Book book = new Book
-        {
-          Id = Guid.NewGuid(),
-          Title = request.Title,
-          Description = request.Description,
-          Publisher = request.Publisher,
-          Author = request.Author,
-          Category = request.Category,
-          UpdatedAt = DateTime.Now
-        };
+        Book book = await _context.Books.FindAsync(request.Id);
+        if (book == null) throw new Exception("Não foi possível encontrar livro.");
 
-        _context.Books.Add(book);
+        book.Title = request.Title ?? book.Title;
+        book.Description = request.Description ?? book.Description;
+        book.Category = request.Category ?? book.Category;
+        book.Author = request.Author ?? book.Author;
+        book.Publisher = request.Publisher ?? book.Publisher;
+        book.UpdatedAt = DateTime.Now;
 
         bool success = await _context.SaveChangesAsync() > 0;
+
         if (success) return Unit.Value;
         throw new Exception("Ocorreu um problema ao salvar os dados!");
       }
