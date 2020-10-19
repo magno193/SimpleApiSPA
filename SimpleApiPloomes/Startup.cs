@@ -33,6 +33,7 @@ namespace SimpleApiPloomes
         opt.AddPolicy("CorsPolicy", policy =>
         {
           policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5000");
+          policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://simpleapiploomes.azurewebsites.net/");
         });
       });
       services.AddMediatR(typeof(List.Query).Assembly);
