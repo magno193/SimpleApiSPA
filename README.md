@@ -13,7 +13,7 @@ O Banco de dados está definido (temporariamente) com a *connection string* de u
 - **GET** Details: `/api/books/{id}`
 - **POST** Create: `/api/books`
 - **PUT** Put: `/api/books/{id}`
-- **DELETE** Delete: `/api/books`
+- **DELETE** Delete: `/api/books{id}`
 
 ## Client
 
